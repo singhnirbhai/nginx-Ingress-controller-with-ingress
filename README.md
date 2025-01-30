@@ -18,6 +18,10 @@ kubectl create deployment demo --image=httpd --port=80
 kubectl expose deployment demo --type=NodePort --port=80
 ```
 ```bash
+kubectl create ingress demo-localhost --class=nginx \
+  --rule="demo.localdev.me/*=demo:80"```bash
+```
+```bash
 kubectl get ingress
 ```
 Ingress external ip put in the vi hosts file and domain name also
